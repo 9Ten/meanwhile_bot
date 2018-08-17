@@ -1,0 +1,16 @@
+node_modules/
+meanwhile-api/node_modules/
+gen_token.js
+
+*.patch
+*.log
+*.sw*
+config.yml
+log/
+
+coverage/
+dist/
+
+.nyc_output/
+
+noti
