@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mysql= require('mysql');
 var http = require('http');
-
+var cors = require('cors')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -18,6 +18,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(cors());
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -30,7 +31,7 @@ app.use(function(req, res, next){
 	global.connection = mysql.createConnection({
 	  	host     : '178.128.55.115',
 	  	user     : 'meanwhile',
-  		database : 'bigdata',
+  		database : 'kbtg_dataset',
   		password : 'Meanwhile@'
 	});
 	connection.connect();
